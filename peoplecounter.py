@@ -54,9 +54,7 @@ while cap.isOpened():
             person_crossed_center = False
 
     cv2.line(frame, (center_line, 0), (center_line, frame_height), (0, 0, 255), 2)
-
     cv2.putText(frame, f'People in the room: {people_entered}', (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-
     cv2.imshow('Pedestrian Detection', frame)
 
     out.write(frame)
