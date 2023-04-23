@@ -5,6 +5,7 @@ import time
 cap = cv2.VideoCapture('people.mp4')
 
 #haarcascade
+#Open Source haarcascade file from: https://github.com/opencv/opencv/tree/master/data/haarcascades
 pedestrian_cascade = cv2.CascadeClassifier("haarcascade_fullbody.xml")
 
 people_entered = 0
