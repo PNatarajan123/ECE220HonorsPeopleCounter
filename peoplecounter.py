@@ -45,12 +45,12 @@ while cap.isOpened():
     for (x, y, w, h) in pedestrians:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-        if center_line - threshold <= x <= center_line + threshold:
-            if not person_crossed_center and time.time() - last_detection_time >= delay:
-                if x  > center_line:
-                    people_left += 1
-                elif x < center_line:
-                    people_entered += 1
+        if center_line - threshold <= x <= center_line + threshold: #First check if box is within threshold of center
+            if not person_crossed_center and time.time() - last_detection_time >= delay: #Delay to avoid double counting
+                if x  > center_line: #Check if x pos of box is greater than center line
+                    people_left += 1 #Person is leaving
+                elif x < center_line: #Check if x pos of box is less than center line
+                    people_entered += 1 #Person is entering
                 person_crossed_center = True
                 last_detection_time = time.time()
         else:
