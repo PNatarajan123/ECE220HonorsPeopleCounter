@@ -41,7 +41,7 @@ while cap.isOpened():
 
     pedestrians = pedestrian_cascade.detectMultiScale(gray, 1.1, 1)
 
-    # Draw a rectangle in each pedestrian and determine their direction
+    # Draw a rectangle in each pedestrian
     for (x, y, w, h) in pedestrians:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
