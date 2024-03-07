@@ -1,4 +1,4 @@
-# ECE220HonorsPeopleCounter
+# PeopleCounter
 People Counter with OpenCV
 
 ### Running Project
